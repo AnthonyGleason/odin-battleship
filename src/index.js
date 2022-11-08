@@ -1,11 +1,15 @@
 import './styles/styles.css';
 import Player from './scripts/player/player';
+import Display from './scripts/display/display';
 
 // eslint-disable-next-line func-names
-const newGame = function () {
+const newGame = function (PLAYER, CPU, PLAYERDISPLAY, CPUDISPLAY) {
   // Create two players
-  const PLAYER = new Player(true);
-  const CPU = new Player(false);
+  // eslint-disable-next-line no-param-reassign
+  PLAYER = new Player(true);
+  // eslint-disable-next-line no-param-reassign
+  CPU = new Player(false);
+
   // Initalize their board arrays
   PLAYER.Gameboard.initBoard();
   CPU.Gameboard.initBoard();
@@ -34,10 +38,21 @@ const newGame = function () {
   // 5) 5x length ship
   CPU.Gameboard.placeShip([[2, 1], [2, 2], [2, 3], [2, 4], [2, 5]]);
 
-  // Display the player boardArray
-
-  // Display the cpu boardArray
+  // Initalize their displays
+  // eslint-disable-next-line no-param-reassign
+  PLAYERDISPLAY = new Display(PLAYER, true);
+  // eslint-disable-next-line no-param-reassign
+  CPUDISPLAY = new Display(CPU, false);
 };
 
 // Initalize a new game (when the site is loaded this runs by default)
-newGame();
+
+// Create two players
+const PLAYER = new Player(true);
+const CPU = new Player(false);
+
+// Create both displays
+const PLAYERDISPLAY = new Display(PLAYER, true);
+const CPUDISPLAY = new Display(CPU, false);
+
+newGame(PLAYER, CPU, PLAYERDISPLAY, CPUDISPLAY);
