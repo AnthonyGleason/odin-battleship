@@ -1,6 +1,6 @@
 :root{
     --board-background: url('../assets/diamond-plate.jpg');
-    --hover: rgb(209, 233, 255);
+    --hover: rgb(182, 182, 182);
 }
 
 *{
@@ -99,14 +99,36 @@ body{
     /* sets border */
     border: 4px solid black;
     border-radius: 20px;
+
+    /* positions rows */
+    display: flex;
+    flex-direction: column;
 }
 .player .row{
-    
+    /* grows each row to fit available space on board div */
+    flex-grow: 1;
+
+    display: flex;
 }
 .player .space{
-    border: 1px solid black;
+    border: 2px solid black;
+    flex-grow: 1;
+    /* it is a 10 by 10 grid so we can set the height to be 10% 
+    for each space */
+    height: 100%;
 }
-
+.player .space:hover{
+    background-color: var(--hover);
+}
+.player .board .row .ship{
+    background-color: gray;
+}
+.player .board .row .miss{
+    background-color: white;
+}
+.player .board .row .hit{
+    background-color: red;
+}
 .content-center{
     /* sets the background color */
     background-image: var(--board-background);
@@ -137,7 +159,7 @@ body{
     /* sets border */
     border: 2px solid black;
     border-radius: 5px;
-    
+
     /* align text to the center */
     text-align: center;
 }

@@ -52,7 +52,7 @@ const PLAYER = new Player(true);
 const CPU = new Player(false);
 
 // Create both displays
-const PLAYERDISPLAY = new Display(PLAYER, true);
-const CPUDISPLAY = new Display(CPU, false);
+let PLAYERDISPLAY;
+let CPUDISPLAY;
 
 newGame(PLAYER, CPU, PLAYERDISPLAY, CPUDISPLAY);
