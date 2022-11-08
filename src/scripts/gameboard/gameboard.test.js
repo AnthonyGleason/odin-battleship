@@ -21,7 +21,11 @@ describe('Gameboard class', () => {
       expect(TESTBOARD.boardArray[7].length).toEqual(10);
     });
   });
-
+  describe('#genShipCoords', () => {
+    it('should generate the same number of coordinates as inputted length', () => {
+      expect(TESTBOARD.genShipCoords(4).length).toBe(4);
+    });
+  });
   describe('#placeShip', () => {
     it('should place a ship at coordinates specified', () => {
       // coordinates to be tested

@@ -7,6 +7,41 @@ class Gameboard {
     this.missedCoords = [];
   }
 
+  genShipCoords(shipLength) {
+    let shipCoords = [];
+    while (shipCoords.length < shipLength) {
+      // generate a random number between 0-9 for an x coord
+      const x = Math.floor(Math.random() * 10);
+      // generate a random number between 0-9 for an y coord
+      const y = Math.floor(Math.random() * 10);
+
+      // test cases to reject coords
+      const vertical = Math.floor(Math.random() * 2);
+      // generate coordinates
+      if (vertical === 0 && x + shipLength < 10 && x + shipLength > -1) {
+        // add the spaces to shipCoords array
+        for (let i = 0; i < shipLength; i += 1) {
+          shipCoords.push([x + i, y]);
+        }
+
+      /* if vertical == 1 test y axis for +shipLength || -shiplength
+      within bounds this tests the coordinates to be within bounds */
+      } else if (vertical === 1 && y + shipLength < 10 && y + shipLength > -1) {
+        // add the spaces to the shipCoords array
+        for (let i = 0; i < shipLength; i += 1) {
+          shipCoords.push([x, y + i]);
+        }
+      }
+      // if any space has a ship reset shipCoords to an empty array
+      shipCoords.forEach((coord) => {
+        if (this.boardArray[coord[0]][coord[1]] === 'S') {
+          shipCoords = [];
+        }
+      });
+    }
+    return shipCoords;
+  }
+
   initBoard() {
     // clear the boardArray
     this.boardArray = [];

@@ -112,9 +112,8 @@ body{
 }
 .player .space{
     border: 2px solid black;
+    /* make spaces fill entire row */
     flex-grow: 1;
-    /* it is a 10 by 10 grid so we can set the height to be 10% 
-    for each space */
     height: 100%;
 }
 .player .space:hover{
