@@ -26,7 +26,7 @@ class Player {
 
   cpuTurn(PlayerBoard) {
     // generate an attack
-    const attack = this.cpuGenCoord(PlayerBoard);
+    const attack = this.cpuGenAttack(PlayerBoard);
     // attack enemy gameboard
     PlayerBoard.recieveAttack(attack);
   }

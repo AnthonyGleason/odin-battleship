@@ -26,9 +26,9 @@ class Gameboard {
   findShip(coords) {
     /* This algorithm is not the most efficient way to solve this problem.
     An alternative solution would be to store the ship object on the board space
-    directly as a propety of a "Space object". We would be able to retrieve
+    directly as a property of a "Space object". We would be able to retrieve
     a reference to the ship object at that coordinate without sorting through every
-    array item */
+    array item, another alternative is of course recursion */
 
     // create a ship found bool which will be returned if a ship is not found
     const shipFound = false;
