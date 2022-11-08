@@ -11,6 +11,8 @@ class Display {
     const allSpaces = this.boardElement.querySelectorAll('.space');
     allSpaces.forEach((space) => {
       space.addEventListener('click', () => {
+        // if the space has already been pressed do not play the turn
+        if (space.classList.contains('miss') || space.classList.contains('hit')) return 0;
         // play player turn
         // eslint-disable-next-line radix
         PLAYERDISPLAY.player.playerTurn(this.player.Gameboard, [9 - parseInt(space.getAttribute('x')), parseInt(space.getAttribute('y'))]);
