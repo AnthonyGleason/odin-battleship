@@ -43,6 +43,8 @@ const newGame = function (PLAYER, CPU, PLAYERDISPLAY, CPUDISPLAY) {
   PLAYERDISPLAY = new Display(PLAYER, true);
   // eslint-disable-next-line no-param-reassign
   CPUDISPLAY = new Display(CPU, false);
+
+  CPUDISPLAY.addSpaceListeners(PLAYERDISPLAY);
 };
 
 // Initalize a new game (when the site is loaded this runs by default)
@@ -54,5 +56,11 @@ const CPU = new Player(false);
 // Create both displays
 let PLAYERDISPLAY;
 let CPUDISPLAY;
+
+// Create new game button
+const newGameButton = document.querySelector('.new-game');
+newGameButton.addEventListener('click', () => {
+  newGame(PLAYER, CPU, PLAYERDISPLAY, CPUDISPLAY);
+});
 
 newGame(PLAYER, CPU, PLAYERDISPLAY, CPUDISPLAY);

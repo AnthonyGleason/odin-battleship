@@ -8,6 +8,24 @@ class Display {
     this.displayGrid();
   }
 
+  addSpaceListeners(PLAYERDISPLAY) {
+    const allSpaces = this.boardElement.querySelectorAll('.space');
+    allSpaces.forEach((space) => {
+      space.addEventListener('click', () => {
+        // play player turn
+        PLAYERDISPLAY.player.playerTurn(this.player.Gameboard, [9 - space.getAttribute('x'), space.getAttribute('y')]);
+        // update cpu grid
+        this.displayGrid();
+        // add event listeners again that were removed (recursive)
+        this.addSpaceListeners(PLAYERDISPLAY);
+        // play cpu turn
+        this.player.cpuTurn(PLAYERDISPLAY.player.Gameboard);
+        // update player grid
+        PLAYERDISPLAY.displayGrid();
+      });
+    });
+  }
+
   getBoard() {
     if (this.isPlayer === true) {
       return document.querySelector('#player-board');
@@ -34,7 +52,10 @@ class Display {
       for (let j = 0; j < 10; j += 1) {
         // create a space
         const space = document.createElement('div');
-        space.setAttribute('index', j);
+        // set coordinates
+        // sets x as 9 - i for same reason as above comment
+        space.setAttribute('x', 9 - i);
+        space.setAttribute('y', j);
         // add space to space class
         space.setAttribute('class', 'space');
         /* if space is 'S' add space to ship class
@@ -50,6 +71,7 @@ class Display {
         if (board[i][j] === 'H') {
           space.classList.add('hit');
         }
+
         // add space to row
         row.appendChild(space);
       }
