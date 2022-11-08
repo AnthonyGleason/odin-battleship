@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667944741671" clover="3.2.0">
-  <project timestamp="1667944741671" name="All files">
+<coverage generated="1667946776168" clover="3.2.0">
+  <project timestamp="1667946776168" name="All files">
     <metrics statements="45" coveredstatements="43" conditionals="12" coveredconditionals="11" methods="15" coveredmethods="14" elements="72" coveredelements="68" complexity="0" loc="45" ncloc="45" packages="3" files="3" classes="3"/>
     <package name="gameboard">
       <metrics statements="26" coveredstatements="26" conditionals="6" coveredconditionals="6" methods="8" coveredmethods="8"/>
@@ -40,16 +40,16 @@
         <metrics statements="12" coveredstatements="10" conditionals="4" coveredconditionals="3" methods="4" coveredmethods="3"/>
         <line num="5" count="6" type="stmt"/>
         <line num="6" count="6" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="19" count="1" type="cond" truecount="3" falsecount="1"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="20" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
       </file>
     </package>
     <package name="ship">

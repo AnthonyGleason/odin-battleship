@@ -6,6 +6,7 @@ class Player {
     this.Gameboard = new Gameboard();
   }
 
+  // eslint-disable-next-line class-methods-use-this
   cpuGenAttack(PlayerBoard) {
     let validMove = false;
     let x;
@@ -31,6 +32,7 @@ class Player {
     PlayerBoard.recieveAttack(attack);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   playerTurn(CpuBoard, attack) {
     // attack the enemy gameboard
     CpuBoard.recieveAttack(attack);

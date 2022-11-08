@@ -44,6 +44,10 @@ const newGame = function (PLAYER, CPU, PLAYERDISPLAY, CPUDISPLAY) {
   // eslint-disable-next-line no-param-reassign
   CPUDISPLAY = new Display(CPU, false);
 
+  // add center greeting
+  document.querySelector('.content-alerts').textContent = 'Welcome to Battleship!';
+
+  // add event listeners which allow turns to be played
   CPUDISPLAY.addSpaceListeners(PLAYERDISPLAY);
 };
 

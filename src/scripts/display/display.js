@@ -3,7 +3,6 @@ class Display {
     this.player = player;
     this.isPlayer = isPlayer;
     this.boardElement = this.getBoard();
-
     // initalizes the grid on both sides
     this.displayGrid();
   }
@@ -13,11 +12,21 @@ class Display {
     allSpaces.forEach((space) => {
       space.addEventListener('click', () => {
         // play player turn
-        PLAYERDISPLAY.player.playerTurn(this.player.Gameboard, [9 - space.getAttribute('x'), space.getAttribute('y')]);
+        // eslint-disable-next-line radix
+        PLAYERDISPLAY.player.playerTurn(this.player.Gameboard, [9 - parseInt(space.getAttribute('x')), parseInt(space.getAttribute('y'))]);
         // update cpu grid
         this.displayGrid();
-        // add event listeners again that were removed (recursive)
-        this.addSpaceListeners(PLAYERDISPLAY);
+        // check to see if all ships have been sunk on either side
+        if (PLAYERDISPLAY.player.Gameboard.isAllSunk() || this.player.Gameboard.isAllSunk()) {
+          if (PLAYERDISPLAY.player.Gameboard.isAllSunk()) {
+            document.querySelector('.content-alerts').textContent = 'Game over CPU WINS';
+          } else if (this.player.Gameboard.isAllSunk()) {
+            document.querySelector('.content-alerts').textContent = 'Game over PLAYER WINS';
+          }
+        } else {
+          // add event listeners again that were removed (recursive)
+          this.addSpaceListeners(PLAYERDISPLAY);
+        }
         // play cpu turn
         this.player.cpuTurn(PLAYERDISPLAY.player.Gameboard);
         // update player grid
