@@ -21,7 +21,7 @@ Press on any square on the computer's game board to start! Both your ship pieces
 <li>Diamond Plate themed background: This is an undiscovered area and can be attacked.</li>
 <li>Red background: A ship has been hit here.</li>
 <li>White background: A previous attempted attack has missed here.</li>
-<li>Grey (only visible on your ships): The automatically generated ship pieces.</li>
+<li>Grey (only visible on your ships): Your automatically generated ship pieces.</li>
 </ul>
 <p>
 The computer AI is smart it will randomly attack coordinates till it hits a ship. After will continue to guess adjacent squares to try to find the rest of the ship.
