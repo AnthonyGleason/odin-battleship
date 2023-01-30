@@ -14,7 +14,7 @@ class Player {
     if (this.lastCpuAttack != null) {
       let tempAttack;
       // try up one coordinate
-      tempAttack = [this.lastCpuAttack[0],this.lastCpuAttack[1] + 1];
+      tempAttack = [this.lastCpuAttack[0], this.lastCpuAttack[1] + 1];
       if (tempAttack[1] > -1 && tempAttack[1] < 10
         && PlayerBoard.boardArray[tempAttack[0]][tempAttack[1]] !== 'M'
         && PlayerBoard.boardArray[tempAttack[0]][tempAttack[1]] !== 'H') {
@@ -22,7 +22,7 @@ class Player {
         return tempAttack;
       }
       // try down one coordinate
-      tempAttack = [this.lastCpuAttack[0] , this.lastCpuAttack[1] - 1];
+      tempAttack = [this.lastCpuAttack[0], this.lastCpuAttack[1] - 1];
       if (tempAttack[1] > -1 && tempAttack[1] < 10
         && PlayerBoard.boardArray[tempAttack[0]][tempAttack[1]] !== 'M'
         && PlayerBoard.boardArray[tempAttack[0]][tempAttack[1]] !== 'H') {
@@ -40,7 +40,7 @@ class Player {
 
       // try right one coordinate
       tempAttack = [this.lastCpuAttack[0] + 1, this.lastCpuAttack[1]];
-      if(tempAttack[0] > -1 && tempAttack[0] < 10
+      if (tempAttack[0] > -1 && tempAttack[0] < 10
         && PlayerBoard.boardArray[tempAttack[0]][tempAttack[1]] !== 'M'
         && PlayerBoard.boardArray[tempAttack[0]][tempAttack[1]] !== 'H') {
         this.lastCpuAttack = null;
@@ -70,7 +70,7 @@ class Player {
     // attack enemy gameboard
     PlayerBoard.recieveAttack(attack);
     // check to see if the last attack was a hit
-    if (PlayerBoard.boardArray[attack[0]][attack[1]]=='H') this.lastCpuAttack = attack;
+    if (PlayerBoard.boardArray[attack[0]][attack[1]] === 'H') this.lastCpuAttack = attack;
   }
 
   // eslint-disable-next-line class-methods-use-this

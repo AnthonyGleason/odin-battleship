@@ -33,6 +33,7 @@ class Display {
         this.player.cpuTurn(PLAYERDISPLAY.player.Gameboard);
         // update player grid
         PLAYERDISPLAY.displayGrid();
+        return (0);
       });
     });
   }

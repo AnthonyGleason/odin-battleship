@@ -33,11 +33,15 @@ class Gameboard {
         }
       }
       // if any space has a ship reset shipCoords to an empty array
+      let removeShip = false;
       shipCoords.forEach((coord) => {
         if (this.boardArray[coord[0]][coord[1]] === 'S') {
-          shipCoords = [];
+          removeShip = true;
         }
       });
+      if (removeShip === true) {
+        shipCoords = [];
+      }
     }
     return shipCoords;
   }
