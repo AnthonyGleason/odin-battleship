@@ -2,6 +2,14 @@
     --board-background: url('../assets/diamond-plate.jpg');
     --hover: rgb(182, 182, 182);
 }
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 
 *{
     margin: 0;
@@ -39,6 +47,7 @@ body{
     content:url("../assets/title.png");
     width: 50%;
     max-width: 500px;
+    animation: 1s ease-in 0s 1 slideInFromLeft;
 }
 .content{
     height: 100%;
@@ -60,6 +69,7 @@ body{
     /* Sets the background color for the title div*/
     background-image: var(--board-background);
     background-size: cover;
+    animation: 1s ease-in 0s 1 slideInFromLeft;
 
     /* sets the title to be 100% width and 10% player div height */
     height: 10%;
@@ -112,9 +122,11 @@ body{
     /* make spaces fill entire row */
     flex-grow: 1;
     height: 100%;
+    transition: background-color 0.2s;
 }
 .player .space:hover{
     background-color: var(--hover);
+    cursor: pointer;
 }
 .player .board .row .ship{
     background-color: gray;
@@ -152,7 +164,7 @@ body{
     /* align text to the center */
     text-align: center;
     font-size: 12px;
-    background-color: azure;
+    background-color: white;
     border: 2px solid black;
     padding: 5px;
 }
@@ -166,7 +178,9 @@ body{
     padding: 5px;
     border: 2px solid black;
     width: 60%;
-    background-color: azure;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.5s;
 }
 .content-center .new-game:hover{
     background-color: var(--hover);
