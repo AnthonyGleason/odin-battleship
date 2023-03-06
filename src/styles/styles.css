@@ -10,7 +10,6 @@
 }
 body{
     /* Set the svg background to fill screen*/
-    height: 100vh;
     background-image: url('../assets/waves.jpg');
     background-size: cover;
 
@@ -20,6 +19,7 @@ body{
     /* set header above content section */
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 .header{
     /* sets header to fill 100% width and 20% of the total
@@ -37,14 +37,15 @@ body{
 .header img{
     /* sets title image instead of using src in index.html */
     content:url("../assets/title.png");
+    width: 50%;
+    max-width: 500px;
 }
 .content{
-    /* sets the content to fill 100% of the remaining space */
-    flex-grow: 1;
-
+    height: 100%;
     /* positions the content elements to be player || content || cpu */
     display: flex;
     justify-content: space-around;
+    margin: 1%;
 }
 .player{
     /* sets each player to fill 100% of the remaining space */
@@ -53,6 +54,7 @@ body{
     /* sets the player title above the player board */
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 .player .title{
     /* Sets the background color for the title div*/
@@ -61,17 +63,12 @@ body{
 
     /* sets the title to be 100% width and 10% player div height */
     height: 10%;
-
-    /* sets the margin to 50px */
-    margin: 50px;
-
+    align-self: center;
     /* sets padding to 20px */
-    padding: 20px;
-
-    /* sets border */
-    border: 4px solid black;
-    border-radius: 20px;
-
+    max-width: 350px;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
     /* positions title */
     display: flex;
     justify-content: center;
@@ -79,15 +76,15 @@ body{
 
     /* font color and size */
     color: rgb(0, 0, 0);
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
+    border: 2px solid black;
 }
 .player .board{
     /* fills the remaining space with the game board */
     flex-grow: 1;
 
     /* sets a margin for the game board */
-    margin: 50px;
 
     /* sets padding to 20px */
     padding: 20px;
@@ -97,8 +94,8 @@ body{
     background-size: cover;
 
     /* sets border */
-    border: 4px solid black;
-    border-radius: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
 
     /* positions rows */
     display: flex;
@@ -134,17 +131,12 @@ body{
     background-size: cover;
 
     /* sets the border style */
-    border: 4px solid black;
-    border-radius: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
     /* sets the content-center */
-    width: 10%;
-
-    /* sets padding */
-    padding: 20px;
-    
+    min-width: 100px;
     /* sets margin to match the player board sections */
-    margin-top: 10%;
-    margin: 50px;
+    margin: 1%;
     /* positions elements in the center*/
     display: flex;
     justify-content: space-evenly;
@@ -152,28 +144,29 @@ body{
     flex-direction: column;
 }
 .content-center .content-alerts{
-    /* sets background */
-    background-color: aliceblue;
-
+    margin: 5px;
+    height: max-content;
+    max-width: 95px;
     /* sets border */
-    border: 2px solid black;
     border-radius: 5px;
-
     /* align text to the center */
     text-align: center;
+    font-size: 12px;
+    background-color: azure;
+    border: 2px solid black;
+    padding: 5px;
 }
 
 .content-center .new-game{
-    /* sets background */
-    background-color: aliceblue;
-
     /* sets border */
-    border: 2px solid black;
     border-radius: 5px;
 
     /* sets button dimensions */
-    height: 7%;
+    height: max-content;
+    padding: 5px;
+    border: 2px solid black;
     width: 60%;
+    background-color: azure;
 }
 .content-center .new-game:hover{
     background-color: var(--hover);
